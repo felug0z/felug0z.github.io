@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fELuGOz Social Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://sun9-79.userapi.com/impf/c824409/v824409143/718c8/H5UaqW_H8bY.jpg?size=2560x1440&quality=96&sign=3665c19a5309271da5b4cb82fdebf0f3&type=album') no-repeat center center/cover;
+            color: #ffffff;
+            font-family: 'Barlow', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #000000;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            background: rgba(50, 50, 50, 0.7);
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            text-align: center;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            border-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .social-links a {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+                width: 100px;
+            }
+
+            .social-links img {
+                width: 16px;
+                height: 16px;
+                margin-right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">fELuGOz</div>
+    <div class="social-links">
+        <a href="https://www.twitch.tv/felugoz" target="_blank"><img src="twitch-icon.png" alt="Twitch">Twitch</a>
+        <a href="https://t.me/felugoz" target="_blank"><img src="telegram-icon.png" alt="Telegram">Telegram</a>
+        <a href="https://x.com/felugoz" target="_blank"><img src="x-icon.png" alt="X">X</a>
+        <a href="https://www.youtube.com/@felugozxd" target="_blank"><img src="youtube-icon.png" alt="YouTube">YouTube</a>
+        <a href="https://steamcommunity.com/id/felugoz" target="_blank"><img src="steam-icon.png" alt="Steam">Steam</a>
+        <a href="https://discord.com/users/840883098588938271" target="_blank"><img src="discord-icon.png" alt="Discord">Discord</a>
+    </div>
+</body>
+</html>
