@@ -40,7 +40,6 @@
             text-shadow: 2px 2px 5px #000000;
             z-index: 1;
             text-align: center;
-            cursor: pointer;
         }
 
         .social-links {
@@ -59,12 +58,12 @@
             border: 2px solid rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             background: rgba(50, 50, 50, 0.7);
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 120px;
             text-align: center;
-            transition: transform 0.3s ease, background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         .social-links a:hover {
@@ -95,43 +94,16 @@
 
         .marquee span {
             display: inline-block;
+            padding-right: 100%;
             animation: scroll-left 15s linear infinite;
         }
 
         @keyframes scroll-left {
             0% {
-                transform: translateX(100%);
+                transform: translateX(0);
             }
             100% {
                 transform: translateX(-100%);
-            }
-        }
-
-        .fullscreen-image {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 100%;
-            height: 100%;
-            background: url('https://cdn.7tv.app/emote/01F6Q2VME80005CV1Y3Z4M97HW/4x.png') no-repeat center center;
-            background-size: contain;
-            animation: zoom-fade 2s forwards;
-            z-index: 2;
-        }
-
-        @keyframes zoom-fade {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(1.5);
             }
         }
 
@@ -160,7 +132,7 @@
     </style>
 </head>
 <body>
-    <div class="title" onclick="showImage()">fELuGOz</div>
+    <div class="title">fELuGOz</div>
     <div class="social-links">
         <a href="https://www.twitch.tv/felugoz" target="_blank"><img src="icons/twitch-icon.png" alt="Twitch">Twitch</a>
         <a href="https://t.me/felugoz" target="_blank"><img src="icons/telegram-icon.png" alt="Telegram">Telegram</a>
@@ -170,18 +142,7 @@
         <a href="https://discord.com/users/840883098588938271" target="_blank"><img src="icons/discord-icon.png" alt="Discord">Discord</a>
     </div>
     <div class="marquee">
-        <span>IF YOU SEES THIS, VI VON ZULUL</span>
+        <span>forsen is love. forsen is life. forsen's hair looks very nice. forsen is sexy. and he rock. i just wanna suck his swedish meatballs. forsen is love. forsen is life. forsen's hair looks very nice. forsen is sexy. and he rock. i just wanna suck his swedish meatballs.</span>
     </div>
-    <div id="fullscreenImage" class="fullscreen-image" style="display: none;"></div>
-
-    <script>
-        function showImage() {
-            const image = document.getElementById('fullscreenImage');
-            image.style.display = 'block';
-            setTimeout(() => {
-                image.style.display = 'none';
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
