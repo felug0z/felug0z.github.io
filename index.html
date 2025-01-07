@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fELuGOz Social Links</title>
+    <title>fELuGOz links</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/favicon.png" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -41,7 +42,6 @@
             z-index: 1;
             text-align: center;
             cursor: pointer;
-            pointer-events: auto;
         }
 
         .social-links {
@@ -130,7 +130,7 @@
     </style>
 </head>
 <body>
-    <div class="title" onclick="showImage()" id="title">fELuGOz</div>
+    <div class="title" onclick="showImage()">fELuGOz</div>
     <div class="social-links">
         <a href="https://www.twitch.tv/felugoz" target="_blank"><img src="icons/twitch-icon.png" alt="Twitch">Twitch</a>
         <a href="https://t.me/felugoz" target="_blank"><img src="icons/telegram-icon.png" alt="Telegram">Telegram</a>
@@ -144,9 +144,9 @@
     <script>
         function showImage() {
             const image = document.getElementById('fullscreenImage');
-            const title = document.getElementById('title');
-            title.style.pointerEvents = 'none';
             image.style.display = 'block';
+            const title = document.querySelector('.title');
+            title.style.pointerEvents = 'none';
             setTimeout(() => {
                 image.style.display = 'none';
                 title.style.pointerEvents = 'auto';
