@@ -1,157 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fELuGOz links</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="icons/felugoz.png">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url('https://sun9-79.userapi.com/impf/c824409/v824409143/718c8/H5UaqW_H8bY.jpg?size=2560x1440&quality=96&sign=3665c19a5309271da5b4cb82fdebf0f3&type=album') no-repeat center center/cover;
-            color: #ffffff;
-            font-family: 'Barlow', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Links</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
 
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            z-index: 0;
-        }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: url('img/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
 
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px #000000;
-            z-index: 1;
-            text-align: center;
-            cursor: pointer;
-        }        	
+    .background-blur,
+    .overlay-dim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            z-index: 1;
-        }
+    .background-blur {
+      backdrop-filter: blur(5px);
+    }
 
-        .social-links a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 1rem;
-            padding: 10px 15px;
-            border: 2px solid rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            background: rgba(50, 50, 50, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 120px;
-            text-align: center;
-            transition: transform 0.3s ease, background-color 0.3s, color 0.3s, border-color 0.3s;
-        }
+    .overlay-dim {
+      background-color: rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
 
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            border-color: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-        }
+    body.icon-hovered .overlay-dim {
+      opacity: 1;
+      z-index: 1;
+    }
 
-        .social-links img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0.5rem;
+      z-index: 2;
+      position: relative;
+    }
 
-        .fullscreen-image {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 100%;
-            height: 100%;
-            background: url('https://cdn.7tv.app/emote/01F6Q2VME80005CV1Y3Z4M97HW/4x.png') no-repeat center center;
-            background-size: contain;
-            animation: zoom-fade 2s forwards;
-            z-index: 2;
-        }
+    .profile {
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
 
-        @keyframes zoom-fade {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(1.5);
-            }
-        }
+    .profile img {
+      width: 160px;
+      border-radius: 50%;
+      margin-bottom: 0.3rem;
+    }
 
-        @media (max-width: 600px) {
-            .title {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
+    .profile h1 {
+      margin: 0.3rem 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
 
-            .social-links a {
-                font-size: 0.9rem;
-                padding: 8px 10px;
-                width: 100px;
-            }
+    .links {
+      display: flex;
+      gap: 0.05rem;
+    }
 
-            .social-links img {
-                width: 16px;
-                height: 16px;
-                margin-right: 5px;
-            }
-        }
-    </style>
+    .links a {
+      text-decoration: none;
+      background: none;
+      color: white;
+      padding: 0.3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .links a:hover {
+      transform: scale(1.3);
+    }
+
+    .links a::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -1rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s, bottom 0.2s;
+      pointer-events: none;
+    }
+
+    .links a:hover::after {
+      opacity: 1;
+      bottom: -0.9rem;
+    }
+
+    .links i {
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 2.2rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 2;
+      text-align: center;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.links a');
+      links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          document.body.classList.add('icon-hovered');
+        });
+        link.addEventListener('mouseleave', () => {
+          document.body.classList.remove('icon-hovered');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-    <div class="title" onclick="showImage()">fELuGOz</div>
-    <div class="social-links">
-        <a href="https://www.twitch.tv/felugoz" target="_blank"><img src="icons/twitch-icon.png" alt="Twitch">Twitch</a>
-        <a href="https://t.me/felugoz" target="_blank"><img src="icons/telegram-icon.png" alt="Telegram">Telegram</a>
-        <a href="https://x.com/felugoz" target="_blank"><img src="icons/x-icon.png" alt="X">X</a>
-        <a href="https://www.youtube.com/@felugozxd" target="_blank"><img src="icons/youtube-icon.png" alt="YouTube">YouTube</a>
-        <a href="https://steamcommunity.com/id/felugoz" target="_blank"><img src="icons/steam-icon.png" alt="Steam">Steam</a>
-        <a href="https://discord.com/users/840883098588938271" target="_blank"><img src="icons/discord-icon.png" alt="Discord">Discord</a>
+  <div class="background-blur"></div>
+  <div class="overlay-dim"></div>
+  <div class="content">
+    <div class="profile">
+      <img src="img/pfp.jpg" alt="Profile Picture" />
+      <h1>fELuGOz</h1>
     </div>
-    <div id="fullscreenImage" class="fullscreen-image" style="display: none;"></div>
-
-    <script>
-        function showImage() {
-            const image = document.getElementById('fullscreenImage');
-            image.style.display = 'block';
-            const title = document.querySelector('.title');
-            title.style.pointerEvents = 'none';
-            setTimeout(() => {
-                image.style.display = 'none';
-                title.style.pointerEvents = 'auto';
-            }, 2000);
-        }
-    </script>
+    <div class="links">
+      <a href="https://twitch.tv/felugoz" target="_blank" data-label="Twitch">
+        <i class="fab fa-twitch"></i>
+      </a>
+      <a href="https://youtube.com/@felugozxd" target="_blank" data-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://t.me/felugoz" target="_blank" data-label="Telegram">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="https://discord.com/users/840883098588938271" target="_blank" data-label="Discord">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://steamcommunity.com/id/felugoz" target="_blank" data-label="Steam">
+        <i class="fab fa-steam"></i>
+      </a>
+    </div>
+    <div class="footer">Фелугоз, fELuGOz, fLGz ⦁ 2021 — 2025</div>
+  </div>
 </body>
 </html>
