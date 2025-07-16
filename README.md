@@ -1,2 +1,4 @@
 # felug0z.github.io
-silly website for my social links
+my website with social links and etc 
+
+LETS GO POGGERS -> flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz flgz.xyz 
