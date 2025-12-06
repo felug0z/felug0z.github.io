@@ -55,6 +55,22 @@
       z-index: 1;
     }
 
+    body.icon-hovered .content > *:not(.links):not(.playlist-link) {
+      filter: blur(2px);
+      transition: filter 0.3s;
+    }
+
+    .links a,
+    .playlist-link a {
+      filter: blur(0px);
+      transition: filter 0.3s, transform 0.3s;
+    }
+
+    body.icon-hovered .links a:not(:hover),
+    body.icon-hovered .playlist-link a:not(:hover) {
+      filter: blur(2px);
+    }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -92,7 +108,7 @@
       justify-content: center;
       gap: 10px;
       z-index: 3;
-      opacity: 0.8; /* добавлена прозрачность */
+      opacity: 0.8;
     }
 
     .links {
@@ -144,6 +160,49 @@
       color: white;
     }
 
+    .playlist-link {
+      margin-top: 1rem;
+      z-index: 3;
+    }
+
+    .playlist-link a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.95rem;
+      transition: transform 0.3s;
+      display: inline-block;
+      position: relative;
+      z-index: 3;
+      border-bottom: 2px dashed rgba(255, 255, 255, 0.8);
+      padding-bottom: 0px;
+    }
+
+    .playlist-link a:hover {
+      transform: scale(1.1);
+    }
+
+    .playlist-link a::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s, bottom 0.2s;
+      pointer-events: none;
+      text-decoration: none;
+    }
+
+    .playlist-link a:hover::after {
+      opacity: 1;
+      bottom: -2.3rem;
+    }
+
     .footer {
       position: absolute;
       bottom: 2.2rem;
@@ -164,7 +223,6 @@
       <h1>fELuGOz</h1>
     </div>
 
-    <!-- Центрированный блок с погодой -->
     <div class="weather-box" id="weatherBox">
       <span id="city">Almaty</span>
       <span id="temperature">—°C</span>
@@ -191,7 +249,13 @@
       </a>
     </div>
 
-    <div class="footer">Фелугоз, fELuGOz, fLGz ⦁ 2021 — 2025</div>
+    <div class="playlist-link">
+      <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" data-label="если вам реально интересно, держите">
+        playlist
+      </a>
+    </div>
+
+    <div class="footer">Фелугоз, fELuGOz, fLGz ® 2021 – 2025</div>
   </div>
 
   <script>
@@ -250,7 +314,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.links a');
+      const links = document.querySelectorAll('.links a, .playlist-link a');
       links.forEach(link => {
         link.addEventListener('mouseenter', () => {
           document.body.classList.add('icon-hovered');
