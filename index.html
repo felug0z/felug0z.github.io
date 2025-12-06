@@ -255,7 +255,7 @@
       </a>
     </div>
 
-    <div class="footer">Фелугоз, fELuGOz, fLGz ® 2021 – 2025</div>
+    <div class="footer">Фелугоз, fELuGOz, fLGz ® 2021 – <span id="currentYear"></span></div>
   </div>
 
   <script>
@@ -323,6 +323,8 @@
           document.body.classList.remove('icon-hovered');
         });
       });
+
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
 
       updateTime();
       updateWeather();
