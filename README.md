@@ -1,8 +1,6 @@
-# felug0z.github.io
-my website with social links and etc 
+# flgz.xyz
+Мой личный сайт для ссылок на соц.сети и т.д. 
 
 Weather powered by [Open-Meteo API](https://open-meteo.com/en/docs)
 
-Icons by [Font Awesome](https://fontawesome.com/)
-
-# LETS GO POGGERS -> https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz https://flgz.xyz 
+Icons by [Font Awesome](https://fontawesome.com)
